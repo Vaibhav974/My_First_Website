@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica+SC&family=IM+Fell+Double+Pica&family=IM+Fell+English&family=Lusitana:wght@400;700&family=Open+Sans&family=Oswald&family=PT+Sans&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Raleway:wght@100;300;400;600&family=Roboto+Slab:wght@400;500&family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- <script src="Date Input.js"></script> -->
+    <!-- <script src="Home-Page.js"></script> -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="Home-Page-Style.css" type="text/css">
+    <link rel="stylesheet" href="Date Input.css" type="text/css"> 
+      <!-- Credits : https://www.cssscript.com/material-date-time-picker-simplepicker/#comments -->
+      <!-- Specifically for HTML Structure and some of CSS styling -->
+
+    <title> Travel Link | Search Easy </title>
+  </head>
+  <body onload="Date_Select_Date_Initialization(); Time_Select_Time_Initialization()">
+    <header class="Header_Background">
+      <nav class="navbar navbar-expand-md flex-row-reverse align-items-center">
+        <div class="navbar-brand justify-content-start">
+          <img src="Logo.png" width="70px" alt="" loading="lazy" class="Header_Logo">
+          <img src="Header Heading.png" width="260px" style="margin-left: 10px;" alt="" loading="lazy" class="Header_Heading">
+        </div>
+        <div class="btn-group" role="group" aria-label="Navigation">
+          <button type="button" class="btn mr-5" disabled id="HB1" onmouseenter="Header_BG(1)" onmouseleave="Header_BG(5)"><span class="Header_Buttons"> Home </span></button>
+          <button type="button" class="btn mr-5" id="HB2" onmouseenter="Header_BG(2)" onmouseleave="Header_BG(5)"><span class="Header_Buttons"> Info </span></button>
+          <button type="button" class="btn mr-2" id="HB3" onmouseenter="Header_BG(3)" onmouseleave="Header_BG(5)"><span class="Header_Buttons"> Help </span></button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid row">
+      <div class="col-md-7 ml-4 mt-3">
+        <section>
+          <nav class="navbar flex-row Search_Bar_Background  mt-5">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn ml-2 mr-3" disabled="true" id="SB1" onmouseenter="Search_Bar_BG(1)" onmouseleave="Search_Bar_BG(5)" onclick="Search_Bar_Navigation(0)"><span class="Search_Bar_Buttons"> Search Routes </span></button>
+              <button type="button" class="btn mr-3" id="SB2" onmouseenter="Search_Bar_BG(2)" onmouseleave="Search_Bar_BG(5)" onclick="Search_Bar_Navigation(1)"><span class="Search_Bar_Buttons"> Train Details </span></button>
+              <button type="button" class="btn mr-2" id="SB3" onmouseenter="Search_Bar_BG(3)" onmouseleave="Search_Bar_BG(5)" onclick="Search_Bar_Navigation(2)"><span class="Search_Bar_Buttons"> Look in Station </span></button>
+            </div>
+          </nav>
+
+          <div class="Input_Background">
+            <div class="container row" id="Input_SB1">
+              <div class="col-md-6 ml-4">
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="row mt-4"><span class="Search_Input_Heading"> Origin </span></div>
+                    <div class="row"><input type="text" name="Origin" class="Origin_Input" id="org"></div>              
+                    <div class="row mt-3"><span class="Search_Input_Heading"> Destination </span></div>
+                    <div class="row"><input type="text" name="Destination" class="Destination_Input" id="dstn"></div>    
+                    <button type="button" class="btn Search_Button text-center" onmouseenter="Search_Format(1,1)" onmouseleave="Search_Format(1,0)">
+                      <div style="padding: 2px 3px 2px 3px;">
+                        <img src="Search Symbol.png" height="12px"><span class="Search_Button_Text" id="Search1"> Search </span>
+                      </div>                
+                    </button>
+                  </div>
+
+                  <div class="col-md-2">
+                    <img src="Transparent Star.png" width="45px" class="Switcher" onclick="Switch_Station()">
+                  </div>  
+                </div>
+                  
+                <div class="row Feature_Description_Background">
+                  <span class="Feature_Description_Text">Feel Free to try out, various flexibilities provided at the right...!!!</span>
+                </div>
+              </div>
+              <!-- <div class="event-log" style="display: none;"> </div> -->
+              <div class="col-md-4 ml-3 mt-2 mb-2">
+                <!-- <div class="simplepicker-wrapper active" style="z-index: 10;"> -->
+                  <div class="simpilepicker-date-picker" id="Picker">
+                    <!-- <div class="simplepicker-day-header" style="display: none;">Friday</div> -->
+                    <div class="simplepicker-date-section">
+                      <!-- <div class="simplepicker-month-and-year" style="display: none;">
+                        <div class="simplepicker-date" style="font-size: 30px;"> 21st</div> August 2020
+                      </div> -->
+                      <div class="simplepicker-select-pane">
+                        <img class="Calendar_Icon_Active" id="Calendar_Button" title="Select Date from Calender!" onclick="Date_or_Time('d')" src="Transparent Star.png" width="28px">
+                        <div class="simplepicker-time simplepicker-fade" id="Disp_Time" onclick="Date_or_Time('t')">--:-- ##</div>
+                        <img class="Time_Icon_Inactive" id="Time_Button" title="Select time" onclick="Date_or_Time('t')" src="Transparent Star.png" width="28px">
+                      </div>
+                    </div>
+                    <div class="simplepicker-picker-section">
+                      <div class="simplepicker-calender-section" style="display: block;" id="Curr_Date">
+                        <div class="simplepicker-month-switcher simplepicker-select-pane">
+                          <button class="simplepicker-icon simplepicker-icon-previous" onclick="Date_Select_Month_Switcher(0)"></button>
+                          <div class="simplepicker-selected-date" onclick="Date_or_Time('d')"><span id="Curr_Month">-------- ====</span></div>
+                          <button class="simplepicker-icon simplepicker-icon-next" onclick="Date_Select_Month_Switcher(1)"></button>
+                        </div>
+                        <div class="simplepicker-calender">
+                          <table id="Date_Pick">
+                            <thead>
+                              <tr><th id="Sunday">Sun</th><th id="Monday">Mon</th><th id="Tuesday">Tue</th><th id="Wednesday">Wed</th><th id="Thursday">Thu</th><th id="Friday">Fri</th><th id="Saturday">Sat</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td onclick="Date_Select_Date_Activation(0)">-</td>
+                                <td onclick="Date_Select_Date_Activation(1)">-</td>
+                                <td onclick="Date_Select_Date_Activation(2)">-</td>
+                                <td onclick="Date_Select_Date_Activation(3)">-</td>
+                                <td onclick="Date_Select_Date_Activation(4)">-</td>
+                                <td onclick="Date_Select_Date_Activation(5)">-</td>
+                                <td onclick="Date_Select_Date_Activation(6)">-</td>
+                              </tr>
+                              <tr>
+                                <td onclick="Date_Select_Date_Activation(7)">-</td>
+                                <td onclick="Date_Select_Date_Activation(8)">-</td>
+                                <td onclick="Date_Select_Date_Activation(9)">-</td>
+                                <td onclick="Date_Select_Date_Activation(10)">-</td>
+                                <td onclick="Date_Select_Date_Activation(11)">-</td>
+                                <td onclick="Date_Select_Date_Activation(12)">-</td>
+                                <td onclick="Date_Select_Date_Activation(13)">-</td>
+                              </tr>
+                              <tr>
+                                <td onclick="Date_Select_Date_Activation(14)">-</td>
+                                <td onclick="Date_Select_Date_Activation(15)">-</td>
+                                <td onclick="Date_Select_Date_Activation(16)">-</td>
+                                <td onclick="Date_Select_Date_Activation(17)">-</td>
+                                <td onclick="Date_Select_Date_Activation(18)">-</td>
+                                <td onclick="Date_Select_Date_Activation(19)">-</td>
+                                <td onclick="Date_Select_Date_Activation(20)">-</td>
+                              </tr>
+                              <tr>
+                                <td onclick="Date_Select_Date_Activation(21)">-</td>
+                                <td onclick="Date_Select_Date_Activation(22)">-</td>
+                                <td onclick="Date_Select_Date_Activation(23)">-</td>
+                                <td onclick="Date_Select_Date_Activation(24)">-</td>
+                                <td onclick="Date_Select_Date_Activation(25)">-</td>
+                                <td onclick="Date_Select_Date_Activation(26)">-</td>
+                                <td onclick="Date_Select_Date_Activation(27)">-</td>
+                              </tr>
+                              <tr>
+                                <td onclick="Date_Select_Date_Activation(28)">-</td>
+                                <td onclick="Date_Select_Date_Activation(29)">-</td>
+                                <td onclick="Date_Select_Date_Activation(30)">-</td>
+                                <td onclick="Date_Select_Date_Activation(31)">-</td>
+                                <td onclick="Date_Select_Date_Activation(32)">-</td>
+                                <td onclick="Date_Select_Date_Activation(33)">-</td>
+                                <td onclick="Date_Select_Date_Activation(34)">-</td>
+                              </tr>
+                              <tr>
+                                <td onclick="Date_Select_Date_Activation(35)">-</td>
+                                <td onclick="Date_Select_Date_Activation(36)">-</td>
+                                <td onclick="Date_Select_Date_Activation(37)">-</td>
+                                <td onclick="Date_Select_Date_Activation(38)">-</td>
+                                <td onclick="Date_Select_Date_Activation(39)">-</td>
+                                <td onclick="Date_Select_Date_Activation(40)">-</td>
+                                <td onclick="Date_Select_Date_Activation(41)">-</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="simplepicker-time-section" style="display: none;" id="Curr_Time">
+                        <input type="time" value="00:00" min="00:00" autofocus="true" onchange="Time_Update()" id="Obt_Time" class="Time_Input_Background">
+                      </div>
+                    </div>
+                    <!-- <div class="simplepicker-bottom-part" style="display: none;">
+                      <button class="simplepicker-cancel-btn simplepicker-btn" title="Cancel">Cancel</button>
+                      <button class="simplepicker-ok-btn simplepicker-btn" title="OK">OK</button>
+                    </div> -->
+                  </div>
+              </div>
+            </div>
+            <div class="container row" id="Input_SB2" style="display: none;">
+              <div class="col-md-2"></div>
+              <div class="col-md-5">
+                <div class="row"><label for="Trn" class="Search2_Input_Heading"> Enter Train No. or Train Name : </label></div>
+                <div class="row"><input type="text" id="Trn" class="Train_Input"></div>
+                <div class="row">
+                  <button type="button" class="btn Search_Button_2 text-center" onmouseenter="Search_Format(2,1)" onmouseleave="Search_Format(2,0)">
+                    <div style="padding: 2px 3px 2px 3px;">
+                      <img src="Search Symbol.png" height="12px"><span class="Search_Button_Text" id="Search2"> Search </span>
+                    </div>
+                  </button>
+                </div>                
+              </div>          
+            </div>
+            <div class="container row" id="Input_SB3" style="display: none;"> 
+              <div class="col-md-1"></div>            
+              <div class="col-md-6">
+                <div class="row"><label for="Stn" class="Search2_Input_Heading" style="color: rgb(3,64,0);"> Enter Station Code or Station Name : </label></div>
+                <div class="row"><input type="text" id="Stn" class="Station_Input"></div>
+                <div class="row">
+                  <button type="button" class="btn Search_Button_2 text-center" onmouseenter="Search_Format(3,1)" onmouseleave="Search_Format(3,0)">
+                    <div style="padding: 2px 3px 2px 3px;">
+                      <img src="Search Symbol.png" height="12px"><span class="Search_Button_Text" id="Search3"> Search </span>
+                    </div>
+                  </button>
+                </div>                
+              </div>
+              <div class="col-md-4">
+                <button type="button" id="Select_Btn1" class="btn btn-xl Select_Day_Button text-center" onmouseenter="Search_Format(4,1)" onmouseleave="Search_Format(4,0)" onclick="Calender_2_Display()"><span class="Select_Day_Btn_Text" id="Select1"> Select Day !! </span></button>
+              </div>
+            </div> 
+            <div id="Day-Drop-Down" class="Pop_Up">
+              <!-- <canvas width="100px" height="100px" style="background-color: 'Red';">                
+              </canvas> Hello -->
+              <div class="simpilepicker-date-picker" id="Picker">
+                <!-- <div class="simplepicker-day-header" style="display: none;">Friday</div> -->
+                <div class="simplepicker-date-section">
+                  <!-- <div class="simplepicker-month-and-year" style="display: none;">
+                    <div class="simplepicker-date" style="font-size: 30px;"> 21st</div> August 2020
+                  </div> -->
+                  <div class="simplepicker-select-pane">
+                    <img id="Calendar_Button_2" title="Select Date from Calender!" onclick="" src="Transparent Star.png" width="28px">
+                    <div class="simplepicker-time simplepicker-fade" id="Disp_Day" onclick=""><span class="Calendar_2_Text">Click on Day or Date</span><span class="Calendar_2_Text" style="font-size: 10px;"> &nbsp; & Press OK</span></div>
+                    <img class="Close_Icon_Inactive" id="Time_Button_2" title="Close" onclick="Calender_2_Hide(0)" src="Transparent Star.png" width="13px">
+                  </div>
+                </div>
+                <div class="simplepicker-picker-section">
+                  <div class="simplepicker-calender-section" style="display: block;" id="Curr_Date_2">
+                    <div class="simplepicker-month-switcher simplepicker-select-pane">
+                      <button class="simplepicker-icon simplepicker-icon-previous" onclick="Date_Select_Month_Switcher(0)"></button>
+                      <div class="simplepicker-selected-date"><span id="Curr_Month_2">-------- ====</span></div>
+                      <button class="simplepicker-icon simplepicker-icon-next" onclick="Date_Select_Month_Switcher(1)"></button>
+                    </div>
+                    <div class="simplepicker-calender">
+                      <table id="Date_Pick_2">
+                        <thead>
+                          <tr>
+                            <th id="Sunday_2"    onclick="Day_Pick_Up(0)">Sun</th>
+                            <th id="Monday_2"    onclick="Day_Pick_Up(1)">Mon</th>
+                            <th id="Tuesday_2"   onclick="Day_Pick_Up(2)">Tue</th>
+                            <th id="Wednesday_2" onclick="Day_Pick_Up(3)">Wed</th>
+                            <th id="Thursday_2"  onclick="Day_Pick_Up(4)">Thu</th>
+                            <th id="Friday_2"    onclick="Day_Pick_Up(5)">Fri</th>
+                            <th id="Saturday_2"  onclick="Day_Pick_Up(6)">Sat</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td onclick="Date_Select_Date_Activation(0)">-</td>
+                            <td onclick="Date_Select_Date_Activation(1)">-</td>
+                            <td onclick="Date_Select_Date_Activation(2)">-</td>
+                            <td onclick="Date_Select_Date_Activation(3)">-</td>
+                            <td onclick="Date_Select_Date_Activation(4)">-</td>
+                            <td onclick="Date_Select_Date_Activation(5)">-</td>
+                            <td onclick="Date_Select_Date_Activation(6)">-</td>
+                          </tr>
+                          <tr>
+                            <td onclick="Date_Select_Date_Activation(7)">-</td>
+                            <td onclick="Date_Select_Date_Activation(8)">-</td>
+                            <td onclick="Date_Select_Date_Activation(9)">-</td>
+                            <td onclick="Date_Select_Date_Activation(10)">-</td>
+                            <td onclick="Date_Select_Date_Activation(11)">-</td>
+                            <td onclick="Date_Select_Date_Activation(12)">-</td>
+                            <td onclick="Date_Select_Date_Activation(13)">-</td>
+                          </tr>
+                          <tr>
+                            <td onclick="Date_Select_Date_Activation(14)">-</td>
+                            <td onclick="Date_Select_Date_Activation(15)">-</td>
+                            <td onclick="Date_Select_Date_Activation(16)">-</td>
+                            <td onclick="Date_Select_Date_Activation(17)">-</td>
+                            <td onclick="Date_Select_Date_Activation(18)">-</td>
+                            <td onclick="Date_Select_Date_Activation(19)">-</td>
+                            <td onclick="Date_Select_Date_Activation(20)">-</td>
+                          </tr>
+                          <tr>
+                            <td onclick="Date_Select_Date_Activation(21)">-</td>
+                            <td onclick="Date_Select_Date_Activation(22)">-</td>
+                            <td onclick="Date_Select_Date_Activation(23)">-</td>
+                            <td onclick="Date_Select_Date_Activation(24)">-</td>
+                            <td onclick="Date_Select_Date_Activation(25)">-</td>
+                            <td onclick="Date_Select_Date_Activation(26)">-</td>
+                            <td onclick="Date_Select_Date_Activation(27)">-</td>
+                          </tr>
+                          <tr>
+                            <td onclick="Date_Select_Date_Activation(28)">-</td>
+                            <td onclick="Date_Select_Date_Activation(29)">-</td>
+                            <td onclick="Date_Select_Date_Activation(30)">-</td>
+                            <td onclick="Date_Select_Date_Activation(31)">-</td>
+                            <td onclick="Date_Select_Date_Activation(32)">-</td>
+                            <td onclick="Date_Select_Date_Activation(33)">-</td>
+                            <td onclick="Date_Select_Date_Activation(34)">-</td>
+                          </tr>
+                          <tr>
+                            <td onclick="Date_Select_Date_Activation(35)">-</td>
+                            <td onclick="Date_Select_Date_Activation(36)">-</td>
+                            <td onclick="Date_Select_Date_Activation(37)">-</td>
+                            <td onclick="Date_Select_Date_Activation(38)">-</td>
+                            <td onclick="Date_Select_Date_Activation(39)">-</td>
+                            <td onclick="Date_Select_Date_Activation(40)">-</td>
+                            <td onclick="Date_Select_Date_Activation(41)">-</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="simplepicker-bottom-part" style="display: inline;">
+                  <button class="simplepicker-cancel-btn simplepicker-btn" title="Cancel" style="margin: 3px 0px;" onclick="Calender_2_Hide(0)">Cancel</button>
+                  <button class="simplepicker-ok-btn simplepicker-btn" title="OK" style="margin: 3px 0px;" onclick="Day_Pick_Up(-1)">OK</button>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </section>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-3">
+        <div class="row">
+          <section class="Modification_Background" id="Modify">
+            <div class="container-fluid row justify-content-center ml-1"><span class="Modification_Heading"> Modifications </span></div>
+            <div class="row justify-content-center mt-4">
+              <label for="Station" class="Modification_Label" style="margin-left: 20px;">Station Flexibility:</label>
+              <input type="range" name="Flexibility" id="Station" min="30" max="120" class="Modification_Input" style="color: red;">
+            </div>
+            <div class="row justify-content-center mt-4">
+              <label for="Date" class="Modification_Label" style="margin-left: 35px;">Date Flexibility:</label>
+              <input type="range" name="Flexibility" id="Date" min="30" max="120" class="Modification_Input">
+            </div>
+            <div class="row justify-content-center mt-4">
+              <label for="Waiting" class="Modification_Label">Waiting Limitation:</label>
+              <input type="range" name="Flexibility" id="Waiting" min="30" max="120" class="Modification_Input">
+            </div>
+            <div class="row justify-content-center mt-4">
+              <span class="Modification_Label" style="margin-left: 5px;">Pausing Tendency</span>
+              <input type="radio" name="Breaking Tendency" id="BreakingY" value="Yes" style="margin: 5px 0px 0px 65px;">
+              <label for="BreakingY" style="margin-left: 5px; font-weight: bold;"> Yes </label>
+              <input type="radio" name="Breaking Tendency" id="BreakingN" value="No" style="margin: 5px 0px 0px 30px;">
+              <label for="BreakingN" style="margin-left: 5px; font-weight: bold;"> No </label>
+            </div>
+          </section> 
+        </div>       
+      </div>
+    </div> 
+
+    <footer class="Footer_Background">
+      <div class="container-fluid row align-items-center">
+        <div class="col-md-3 Copyright_Text ml-4">
+          &copy; 2020 Basic Websites <br> &emsp; Designed & Developed By <br> &emsp; &emsp; Vaibhav Kumar
+        </div>
+        <div class="col-md-3">
+          <div class="row align-items-center pb-3 pt-3 pl-3 ml-3 Rating_Lighting">
+            <span class="Rating_Text" id="Rating_Bar"> R <span style="font-size: 15px; margin-left: -3px;"> ATE </span> U <span style="font-size: 15px; margin-left: -4px;"> S </span> : </span>
+            <div class="Star_1" id="Rate_1" onmouseenter="Rating(1)" onmouseleave="Rating(0)" onclick="Rating_Click(1)"><img src="Transparent Star.png" id="Star_1"></div>
+            <div class="Star_2" id="Rate_2" onmouseenter="Rating(2)" onmouseleave="Rating(0)" onclick="Rating_Click(2)"><img src="Transparent Star.png" id="Star_2"></div>
+            <div class="Star_3" id="Rate_3" onmouseenter="Rating(3)" onmouseleave="Rating(0)" onclick="Rating_Click(3)"><img src="Transparent Star.png" id="Star_3"></div>
+            <div class="Star_4" id="Rate_4" onmouseenter="Rating(4)" onmouseleave="Rating(0)" onclick="Rating_Click(4)"><img src="Transparent Star.png" id="Star_4"></div>
+            <div class="Star_5" id="Rate_5" onmouseenter="Rating(5)" onmouseleave="Rating(0)" onclick="Rating_Click(5)"><img src="Transparent Star.png" id="Star_5"></div>
+          </div>  
+        </div>
+        <div class=col-md-3>
+          <div class="row align-items-center Terms_Lighting pl-4 pb-3 pt-3 ml-5">
+            <a class="Terms_and_Conditions" href="#"> Terms & Conditions </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row align-items-center Suggestion_Lighting pl-4 pt-3 pb-3 mr-3 ml-2" id="Suggestion_Btn" onclick="Suggestion_Display()">
+            <span class="Suggestion_Text"> Got Suggestions !!! </span>
+            <img src="Suggestion Icon.png" width="35px" style="margin-left: 7px;">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="Suggestion_In" class="Pop_Up">
+      <textarea id="Suggest" cols="30" rows="9" placeholder="Tell us, what do you Think and also about the Ideas you wish to Share... " style="resize: none;" style="border-radius: 5px;"></textarea><br>
+      <input type="button" name="Suggest_Btn" value="Submit" style="margin: 0px 86px;" onclick="Suggestion_Display()">
+    </div> 
+      
+    <!-- Optional JavaScript -->
+    <script type="text/javascript">
+      function Header_BG(i)
+      { var Button = [document.getElementById("HB1"),document.getElementById("HB2"),document.getElementById("HB3")];
+        for(var j=0; j<3; j++)
+        { if(j==i-1)
+          { if(Button[j].disabled == "true") return ;
+            else Button[j].style.backgroundColor = "rgba(135,16,10,0.10)" ;
+          }
+          else Button[j].style.backgroundColor = "rgba(255,255,255,0)" ;
+        }
+      }
+
+      function Search_Bar_Navigation(n)
+      { var Button = [document.getElementById("SB1"),document.getElementById("SB2"),document.getElementById("SB3")];
+        var Month = document.getElementById("Curr_Month") ;
+        var Context = [document.getElementById("Input_SB1"), document.getElementById("Input_SB2"), document.getElementById("Input_SB3")] ;
+
+        if(Calender_No == 2) Calender_2_Hide(0) ;
+
+        for(var i=0; i<3; i++)
+        { if(i == n) { Button[i].disabled = true ; Context[i].style.display = "flex" ; }
+          else { Button[i].disabled = false ; Context[i].style.display = "none" ; }
+        }
+
+        if(n == 0)
+        { Date_Select_Date_Filler(Active_Month, Active_Year) ;
+          Month.innerHTML = Months[Active_Month] + "  " + Active_Year ;
+          document.getElementById("Modify").style.display = "block" ;
+        }
+        else if(n == 1)
+        { document.getElementById("Modify").style.display = "none" ;
+        } 
+        else if(n == 2) 
+        { document.getElementById("Modify").style.display = "none" ;
+        }
+      }
+
+      function Search_Bar_BG(i)
+      { var Button = [document.getElementById("SB1"),document.getElementById("SB2"),document.getElementById("SB3")];
+        for(var j=0; j<3; j++)
+        { if(j==i-1)
+          { if(Button[j].disabled == "true") return ;
+            else Button[j].style.backgroundColor = "rgba(51,62,193,0.10)" ;
+          }
+          else Button[j].style.backgroundColor = "rgba(255,255,255,0)" ;
+        }
+      }
+
+      function Switch_Station()
+      { var O = document.getElementById("org") ;
+        var D = document.getElementById("dstn");
+
+        var Temp = O.value ;
+        O.value = D.value ;
+        D.value = Temp ;
+      }
+
+      function Search_Format(i,h)
+      { var Content ;
+         if(i==1)      Content = document.getElementById("Search1") ;
+         else if(i==2) Content = document.getElementById("Search2") ;
+         else if(i==3) Content = document.getElementById("Search3") ;
+         else if(i==4) Content = document.getElementById("Select1") ;
+
+         if(h==1) Content.className = "Search_Button_Text_hover" ;
+         else Content.className = "Search_Button_Text" ;
+
+         if(i==4)
+         { if(h==1) Content.className = "Select_Day_Btn_Text_hover" ;
+           else Content.className = "Select_Day_Btn_Text" ;          
+         }
+      }
+
+      var Rating_Value = 0 ;
+      function Rating(i)
+      { var Rating = [document.getElementById("Rate_1"),document.getElementById("Rate_2"),document.getElementById("Rate_3"),document.getElementById("Rate_4"),document.getElementById("Rate_5")] ;
+        var Rate_Text = document.getElementById("Rating_Bar") ;
+
+        if(0<i) Rate_Text.className = "Rating_Text_hover" ;
+        else Rate_Text.className = "Rating_Text" ;
+
+        for(var j=0; j<5; j++)
+        { if(j<i) Rating[j].className = "Star_"+(j+1)+"_hover" ;
+          else if(i<1 && Rating_Value != 0)
+          { if(j >= Rating_Value) Rating[j].className = "Star_"+(j+1) ; 
+            else Rating[j].className = "Star_"+(j+1)+"_hover" ;
+          }
+          else Rating[j].className = "Star_"+(j+1) ;
+        }
+      }
+
+      function Rating_Click(i)
+      { var Rating = [document.getElementById("Rate_1"),document.getElementById("Rate_2"),document.getElementById("Rate_3"),document.getElementById("Rate_4"),document.getElementById("Rate_5")] ;
+        var Rate_Text = document.getElementById("Rating_Bar") ;
+
+        if(Rating_Value == 0) 
+        { Rate_Text.className = "Rating_Text_hover" ;
+          Rating_Value = i ;
+        }  
+        else if(i == Rating_Value) 
+        { Rating_Value = 0 ;
+          Rate_Text.className = "Rating_Text" ;
+        }
+        else Rating_Value = i ;
+
+        for(var j=0; j<5; j++)
+        { if(j<Rating_Value)  Rating[j].className = "Star_"+(j+1)+"_hover" ;
+          else Rating[j].className = "Star_"+(j+1) ;
+        }
+      }
+
+
+      // window.addEventListener('click', function(e){   
+      //   if (!document.getElementById("Picker").contains(e.target) && Calender_No == 2)
+      //   { Calender_2_Hide() ; } 
+      // });
+
+      var Months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] ;
+      var Active_Date = 28, Prev_Date = 31 ;
+      var Active_Month = 7, Prev_Month = 7 ;
+      var Active_Year = 2020, Prev_Year = 2020;
+      var Calender_No = 1;
+
+      var Table_ID = "Date_Pick" ;
+      var Month_ID = "Curr_Month";
+
+      function Calender_2_Display()
+      { var Element = document.getElementById("Select_Btn1") ;
+        Name_Convention(2) ;
+        var Details = Element.getBoundingClientRect() ;
+        var Pop = document.getElementById("Day-Drop-Down") ;
+        var Month = document.getElementById(Month_ID) ;
+
+        Pop.style.top = (Math.ceil(Details.top) + 1) + "px" ;
+        Pop.style.left = (Math.ceil(Details.left) - 30) + "px" ;
+        Pop.style.display = "block" ;
+        Month.innerHTML = Months[Active_Month] + "  " + Active_Year ;
+        Date_Select_Date_Filler(Active_Month, Active_Year) ;
+      }
+
+      function Calender_2_Hide(i)
+      { var Hide = document.getElementById("Day-Drop-Down") ;
+        Hide.style.display = "none" ;
+        Name_Convention(1) ;
+
+        if(i == 0)
+        { Active_Date = Prev_Date ;
+          Active_Month = Prev_Month ;
+          Active_Year = Prev_Year ;
+        }
+        else
+        { Prev_Date = Active_Date ;
+          Prev_Month = Active_Month ;
+          Prev_Year = Active_Year ;
+        }
+      }
+
+      function Name_Convention(i)
+      { if(i == 1) Calender_No = 1 ;
+        else if(i == 2) Calender_No = 2 ;
+
+        if(Calender_No == 1)
+        { Table_ID = "Date_Pick" ;
+          Month_ID = "Curr_Month";
+        }
+        else if(Calender_No == 2)
+        { Table_ID = "Date_Pick_2" ;
+          Month_ID = "Curr_Month_2";          
+        }
+      }
+
+      function Day_Pick_Up(i)
+      { var Day_List = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] ;
+        var Active_Day ;
+        var Target_Btn = document.getElementById("Select1") ;
+        
+        if(i == -1) 
+        { Active_Day = Date_Select_Day_Search(Active_Date, Active_Month+1, Active_Year) ;
+          Target_Btn.innerHTML = Day_List[Active_Day] ;
+        }  
+        else Target_Btn.innerHTML = Day_List[i] ;
+
+        Calender_2_Hide(1) ;
+      }
+
+      function leap_year(y)
+      { if(((y%100)==0)&&((y%400)==0))     return 1 ;
+        else if(((y%4)==0)&&((y%100)!=0))  return 1 ;
+        else return 0 ;
+      }
+
+      function Date_Select_Day_Search(d, m, y)
+      { var dc, mc, yc, cc, x, lp ;
+
+        x = y%100 ;
+        yc = ((x%28)+(x/4))%7 ;
+        lp = leap_year(y) ;
+
+        switch(m)
+        { case 1 : mc = 6 ; break ;
+          case 2 : mc = 2 ; break ;
+          case 3 : mc = 2 ; break ;
+          case 4 : mc = 5 ; break ;
+          case 5 : mc = 0 ; break ;
+          case 6 : mc = 3 ; break ;
+          case 7 : mc = 5 ; break ;
+          case 8 : mc = 1 ; break ;
+          case 9 : mc = 4 ; break ;
+          case 10 : mc = 6 ; break ;
+          case 11 : mc = 2 ; break ;
+          case 12 : mc = 4 ; break ;
+        }
+
+        if((lp==1)&&(m<3))  mc-- ;
+        dc = d ;
+
+        switch((y%400)-x)
+        { case 0 : cc = 0 ; break ;
+          case 300 : cc = 1 ; break ;
+          case 200 : cc = 3 ; break ;
+          case 100 : cc = 5 ; break ;
+        }
+
+        return Math.floor((dc+mc+yc+cc) % 7) ;
+      }
+
+      function Date_Select_Date_Filler(m, y)
+      { var Day = Date_Select_Day_Search(1, m+1, y) ; //alert(Day+' '+m+' '+y) ;
+        var Date_In = 0, Max_Date_In = 0, i = 0;
+        var Table = document.getElementById(Table_ID) ;
+        var Today = new Date() ;
+        var Rows = Table.rows, Total_Row = Rows.length ;
+        var Cells, Total_Cell, Cell ;
+
+        if(m == 0 || m == 2 || m == 4 || m == 6 || m == 7 || m == 9 || m == 11) Max_Date_In = 31 ;
+        else if(m == 1 && leap_year(y)==1) Max_Date_In = 29 ;
+        else if(m == 1 && leap_year(y)==0) Max_Date_In = 28 ;
+        else Max_Date_In = 30 ;
+
+        for(var r=0; r<Total_Row; r++)
+        { Cells = Rows[r].cells ;
+          Total_Cell = Cells.length ;
+          for(var c=0; c<Total_Cell; c++)
+          { Cell = Cells[c] ;
+            if(Cell.innerHTML.length > 2) continue ;
+            if(i>=Day && Date_In<Max_Date_In) 
+            { Date_In += 1 ; 
+              Cell.innerHTML = Date_In ; 
+              Cell.className = "normal" ;
+              if(c == 0) Cell.className = "holiday" ;
+            }
+            else 
+            { Cell.innerHTML = "" ;
+              Cell.className = "disabled" ;
+            }
+
+            if(y < Today.getFullYear()) Cell.className = "disabled" ;
+            else if(y == Today.getFullYear())
+            { if(m < Today.getMonth()) Cell.className = "disabled" ;
+              else if(m == Today.getMonth())
+              { if(Cell.innerHTML.length > 0 && parseInt(Cell.innerHTML) < Today.getDate()) Cell.className = "disabled" ;
+              }                           
+            }
+            if(Cell.className == "disabled" && c == 0) Cell.className = "disabled_holiday" ;
+
+            if(m==Today.getMonth() && y==Today.getFullYear() && parseInt(Cell.innerHTML)==Today.getDate())
+              Cell.className = "today" ;
+
+            if(m==Active_Month && y==Active_Year && (Cell.innerHTML.length>0 && parseInt(Cell.innerHTML) == Active_Date))
+              if(Cell.className == "today") Cell.className = "today_active" ;
+              else if(Cell.className == "holiday") Cell.className = "holiday_active" ;
+              else Cell.className = "active" ;
+
+            i++ ;
+          }
+        }
+      }
+
+      function Date_Select_Date_Initialization()
+      { var Today = new Date() ;
+        var Month = document.getElementById(Month_ID) ;
+        Active_Date = Today.getDate() ;
+        Active_Month = Today.getMonth();
+        Active_Year = Today.getFullYear();
+        Date_Select_Date_Filler(Active_Month, Active_Year) ;
+        Month.innerHTML = Months[Active_Month] + "  " + Active_Year ;
+      }
+
+      function Date_Select_Date_Activation(position)
+      { var Table = document.getElementById(Table_ID) ;
+        var Rows = Table.rows, Total_Row = Rows.length ;
+        var Cells, Total_Cell, Cell, i=0 ;
+        var Month = document.getElementById(Month_ID) ; 
+        var Current = Month.textContent.split("  "); 
+
+        Active_Month = Months.indexOf(Current[0]) ;
+        Active_Year = parseInt(Current[1]) ;
+
+        for(var r=0; r<Total_Row; r++)
+        { Cells = Rows[r].cells ;
+          Total_Cell = Cells.length ;
+
+          for(var c=0; c<Total_Cell; c++)
+          { Cell = Cells[c] ;
+            if(Cell.innerHTML.length > 2) continue ;
+            if(position == i)
+            { Active_Date = parseInt(Cell.innerHTML) ;
+              i = 100 ; break ;
+            }
+            else Cell.className = "normal" ;
+            i++ ;
+          }
+         if(i == 100) break ;  
+        }
+        Date_Select_Date_Filler(Active_Month, Active_Year) ;
+        Time_Update() ;
+      }
+
+      function Date_Select_Month_Switcher(i)
+      { var Year = 0;
+        var Month = document.getElementById(Month_ID) ;
+        var Current = Month.textContent.split("  ") ;
+        
+        Year = parseInt(Current[1]) ; 
+        var Disp_Month = Months.indexOf(Current[0]) ;
+
+        if(typeof Year === "undefined" || typeof Month === "undefined" || typeof Current === "undefined") 
+        { var today = new Date() ;
+          Year = today.getFullYear() ;
+          Disp_Month = today.getMonth() ;
+        }
+
+        if(i==1) 
+        { Disp_Month += 1 ;
+          if(Disp_Month == 12) { Disp_Month = 0; Year += 1;}
+        }
+        else 
+        { if(Disp_Month > 0) Disp_Month -= 1 ;
+          else if(Disp_Month == -1) Disp_Month = 0 ;
+          else { Disp_Month = 11 ; Year -= 1 ;}
+        } 
+        
+        Month.innerHTML = Months[Disp_Month] + "  " + Year ;
+        Date_Select_Date_Filler(Disp_Month, Year) ;        
+      }
+
+      function Date_or_Time(determiner)
+      { var Hide, Visible, Hide_Button, Visible_Button, Fade ;
+        var Month = document.getElementById("Curr_Month") ;
+        Fade = document.getElementById("Disp_Time") ;
+
+        if(determiner == 't') 
+        { Hide = document.getElementById("Curr_Date") ;
+          Hide_Button = document.getElementById("Calendar_Button") ;
+          Visible = document.getElementById("Curr_Time") ;
+          Visible_Button = document.getElementById("Time_Button") ;
+           Fade.className = "simplepicker-time" ;
+           Hide_Button.className = "Calendar_Icon_Inactive" ;
+           Visible_Button.className = "Time_Icon_Active" ;           
+        }
+        else
+        { Hide = document.getElementById("Curr_Time") ;
+          Visible = document.getElementById("Curr_Date") ;
+          Hide_Button = document.getElementById("Time_Button") ;
+          Visible_Button = document.getElementById("Calendar_Button") ;
+          Fade.className = "simplepicker-time simplepicker-fade" ;
+          Hide_Button.className = "Time_Icon_Inactive" ;
+          Visible_Button.className = "Calendar_Icon_Active" ; 
+          Date_Select_Date_Filler(Active_Month, Active_Year) ;
+          Month.innerHTML = Months[Active_Month] + "  " + Active_Year ;        
+        }
+
+        Hide.style.display = "none" ;
+        Visible.style.display = "block" ;
+        if(determiner == 't') document.getElementById("Obt_Time").focus() ;
+      }
+
+      function Time_Update()
+      { var Time = document.getElementById("Disp_Time") ;
+        var Input = document.getElementById("Obt_Time") ;
+        var Today = new Date() ;
+        
+        if(Active_Date == Today.getDate() && Active_Month == Today.getMonth() && Active_Year == Today.getFullYear())
+          if(Input.value < Input.min) 
+          { Time_Select_Time_Initialization() ;
+            Input.className = "Time_Input_Background_Error" ; 
+            return ;
+          }
+
+        Input.className = "Time_Input_Background" ;
+        Time.innerHTML = Input.value ;
+        Time.innerHTML += " Hrs" ;
+      }
+
+      function Time_Select_Time_Initialization()
+      { var Time = document.getElementById("Disp_Time"), Updated_Time = "" ;
+        var Now = new Date() ;
+        var x = Now.getMinutes(); if(Now.getSeconds() > 30) x++ ; 
+        if(x == 60) x = 0;  x = "" + x ;
+        var Hour = "" + Now.getHours() ;
+          if(Hour.length == 1) Hour = "0" + Hour ; 
+          if(x.length == 1) x = "0" + x ;
+        Time.innerHTML = Hour + ":" + x + " Hrs" ;
+        document.getElementById("Obt_Time").min = Hour + ":" + x + " Hrs" ;       
+      }
+
+      function Suggestion_Display()
+      { var Element = document.getElementById("Suggestion_Btn") ;
+        var Details = Element.getBoundingClientRect() ;
+        var Pop = document.getElementById("Suggestion_In") ;
+
+
+        Pop.style.top = (Math.ceil(Details.top) - 245) + "px" ;
+        Pop.style.left = (Math.ceil(Details.left) + 15) + "px" ;
+        if(Pop.style.display != "block") Pop.style.display = "block" ;
+        else Pop.style.display = "none" ;
+      }
+
+      // function fade(element) {
+      //   var op = 1;  // initial opacity
+      //   var timer = setInterval(function () {
+      //       if (op <= 0.1){
+      //           clearInterval(timer);
+      //           element.style.display = 'none';
+      //       }
+      //       element.style.opacity = op;
+      //       element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      //       op -= op * 0.1;
+      //   }, 50);
+      // }
+
+      // @-webkit-keyframes Fade_Effect 
+      // { 0% {opacity: 0;}
+      //   100% {opacity: 1;}
+      // }
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  </body>
+</html>

@@ -1,0 +1,527 @@
+body
+{ background-image: url("Page Background (Dark) 1 [1920x1080].png");
+  min-height:100%;
+  width: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+}
+
+.Header_Background
+{ background-image: url("Header Background.png");
+  min-width:100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -moz-background-size: cover;
+}
+
+.Header_Buttons
+{ font-family: "Lusitana";
+  font-size: 27px;
+  color: #CCCCCC;
+  text-shadow: 0 0 15px #4A0000;
+  opacity: 0.87;
+}
+
+.Header_Logo
+{ position: absolute;
+  left: 20px;
+  top: 3px;	
+}
+
+.Header_Heading
+{ position: absolute;
+  left: 90px;
+  top: 2px;	
+}
+
+.Search_Bar_Background
+{ background-image: url("Search Bar Background (Blurred).png");
+  background-position: inherit;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.Search_Bar_Buttons
+{ font-family: 'IM Fell Double Pica', serif;
+  font-size: 20px;
+  color: #E6E6E6;
+}
+
+/*.Search_Bar_BootStrap_Btn{}
+.Search_Bar_BootStrap_Btn:hover
+{ background-color: rgba(51,62,193,0.10);}*/
+
+.Input_Background
+{ background-image: url("Input Background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: -5px;
+}
+
+.Search_Input_Heading
+{ font-size: 15px;
+  font-family: "Californian FB";
+  font-weight: bold;
+  color: #1D0375;
+}
+
+.Search2_Input_Heading
+{ margin-top: 15px;
+  font-size: 20px;
+  font-family: "Californian FB";
+  font-weight: bold;
+  color: rgb(163,7,7);
+  text-shadow: 2px 3px 4px rgba(165,77,12,0.6) ; 
+}
+
+.Origin_Input
+{ background-color: #DBFBF3;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  border: 2px solid #84E2B3;
+  border-radius: 7px;	
+}
+
+.Train_Input
+{ background-color: rgba(253,213,128,0.8);
+  margin-left: 40px;
+  margin-bottom: 10px;
+  border: 2px solid rgba(245,167,3,1);
+  border-radius: 7px;
+  width: 300px;
+}
+
+.Station_Input
+{ background-color: rgba(156,132,255,0.8);
+  margin-left: 40px;
+  margin-bottom: 10px;
+  border: 2px solid rgba(23,0,117,1);
+  border-radius: 7px;
+  width: 250px;
+}
+
+.Destination_Input
+{ background-color: #FBF0DB;
+  margin-left: 40px;
+  border: 2px solid #E2BC84;
+  border-radius: 7px;
+}
+
+.Search_Button
+{ background-color: #C85F30;	
+  border-radius: 20px;
+  border: 1px solid #6D59BE;
+  margin-left: 100px;
+  margin-top: 25px;
+  text-align: center;
+  vertical-align: center;
+  padding: 2px 10px 2px 10px;
+  box-shadow: 4px 9px 12px #D6CCFF; 
+}
+
+.Search_Button_2
+{ background-color: #C85F30;	
+  border-radius: 20px;
+  border: 1px solid #6D59BE;
+  margin: 2px 15px 20px 95px ;
+  text-align: center;
+  vertical-align: center;
+  padding: 2px 10px 2px 10px;
+  box-shadow: 4px 9px 12px #D6CCFF; 
+}
+
+.Select_Day_Button
+{ background-color: rgba(119,0,41,0.8);	
+  border-radius: 20px;
+  border: 1px solid #6D59BE;
+  margin: 50px 50px 60px 40px ;
+  text-align: center;
+  vertical-align: center;
+  padding: 2px 10px 2px 10px;
+  box-shadow: 4px 9px 12px #D6CCFF;
+}
+
+.Select_Day_Button:hover { background-color: rgba(255,138,180,0.9) ; border-radius: 60px;}
+
+.Select_Day_Btn_Text
+{ color: rgb(145,145,145);
+  font-size: 20px;
+  font-family: "Roboto";
+  font-weight: normal;
+  margin-left: 2px;
+}
+
+.Select_Day_Btn_Text_hover 
+{ color: rgba(16,12,101,0.85); 
+  font-size: 22px;
+  font-family: "Californian FB" ;
+  font-weight: bolder;
+  -webkit-text-stroke-width: 1px; 
+  -webkit-text-stroke-color: rgba(16,12,101,0.85); 	
+}
+
+.btn-xl
+{ padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  width:80%;
+}
+
+.Search_Button:hover
+{ border-radius: 10px;
+  border: 1px groove rgb(81,6,2);
+  background-color: rgb(252,182,105);
+  margin-left: 100px;
+  margin-top: 25px;
+  text-align: center;
+  vertical-align: center;
+  padding: 2px 10px 2px 10px;
+  box-shadow: 2px 3px 6px rgb(3,155,182);
+}
+
+.Search_Button_2:hover
+{ border-radius: 10px;
+  border: 1px groove rgb(81,6,2);
+  background-color: rgb(252,182,105);
+  margin: 2px 15px 20px 95px ;
+  text-align: center;
+  vertical-align: center;
+  padding: 2px 10px 2px 10px;
+  box-shadow: 2px 3px 6px rgb(3,155,182);
+}
+
+.Switcher
+{ background-image: url("Switch Symbol.png");
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: scroll;
+  width: 45px;
+  height: 45px;
+  margin-top: 80px;	
+}
+
+.Switcher:hover
+{ background-image: url("Switcher Hover.png");
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: scroll;
+  width: 45px;
+  height: 45px;
+  margin-top: 80px;
+}
+
+.Search_Button_Text
+{ color: #E6E6E6;
+  font-size: 14px;
+  font-family: "Roboto";
+  font-weight: normal;
+  margin-left: 2px;	
+  /*padding: 4px;*/ 
+}
+
+.Search_Button_Text_hover
+{ color: rgb(110,110,110);
+  font-size: 14px;
+  font-weight: normal;	
+  font-family: "Californian FB";
+  margin-left: 2px;
+}
+
+.Feature_Description_Background
+{ background-image: url("Feature Description.png");
+  background-size: 100% 100%;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  text-align: center;
+  vertical-align: center;
+}
+
+.Feature_Description_Background:hover
+{ background-image: url("Transparent Star.png") ;
+}
+
+.Feature_Description_Text
+{ font-family: 'Times New Roman';
+  font-size: 14px ;
+  font-weight: normal;
+  color: #0A6113;
+  padding: 30px 10px 30px 10px;
+}
+
+.Time_Input_Background { background-color: rgba(255,255,255,0) ;}
+.Time_Input_Background_Error { background-color: rgba(237,31,41,0.4); }
+
+.Pop_Up
+{ display: none;
+  position: fixed;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.Modification_Heading
+{ font-family: "Roboto Slab";
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.91);
+  -webkit-text-stroke-width: 1px; 
+  -webkit-text-stroke-color: rgb(162,13,13);
+  text-shadow: 2px 3px 4px rgba(0,0,0,0.95);
+}
+
+.Modification_Background
+{ background-image: url("Modification Background.png");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  margin-top: 100px;
+  padding: 10px 30px 10px 10px;
+  border-radius: 15px
+}
+
+.Modification_Label
+{ margin-left: 10px;
+  color: rgba(139,84,0,1);
+  text-shadow: 2px 3px 4px rgba(255,157,10,1);
+  -webkit-text-stroke-width: 1px; 
+  -webkit-text-stroke-color: rgba(139,84,0,0.75);
+  font-weight: normal;
+}
+
+.Modification_Input
+{ margin-left: 50px;
+}
+
+.Footer_Background
+{ background-image: url("Footer Background.png");
+  width: 100%;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.Copyright_Text
+{ color: rgba(204,204,204,0.94);
+  font-size: 16px;
+  font-family: "Montserrat";
+  -webkit-text-stroke-width: 0.7px; 
+  -webkit-text-stroke-color: rgb(74,0,0);
+  text-shadow: 2px 3px 2px rgba(214,214,214,0.2);
+}
+
+.Rating_Text
+{ font-family: "Montserrat";
+  font-size: 22px;
+  color: rgba(225,111,74,0.74);
+  -webkit-text-stroke-width: 0.7px; 
+  -webkit-text-stroke-color: rgba(253,152,77,0.9); /*225,111,74,0.74 /*225,111,74*/
+  font-weight: bold;
+  text-shadow: 2px 3px 4px #000000;
+  padding-bottom: 2px;
+  margin-left: 3px;
+}
+
+.Rating_Text_hover
+{ font-family: "Montserrat";
+  font-size: 22px;
+  color: rgba(18,74,0, 0.94);
+  -webkit-text-stroke-width: 0.7px; 
+  -webkit-text-stroke-color: rgb(17,74,0);
+  font-weight: bold;
+  text-shadow: 2px 3px 4px #000000;
+  padding-bottom: 2px;
+  margin-left: 3px;
+}
+
+.Star_1
+{ background-image: url("1 Star.png");
+  background-origin: content-box;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.Star_1_hover
+{ background-image: url("1 Star Hover.png");
+  background-origin: content-box;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.Star_2
+{ background-image: url("2 Star.png");
+  background-origin: content-box;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.Star_2_hover
+{ background-image: url("2 Star Hover.png");
+  background-origin: content-box;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.Star_3
+{ background-image: url("3 Star.png");
+  background-origin: content-box;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.Star_3_hover
+{ background-image: url("3 Star Hover.png");
+  background-origin: content-box;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.Star_4
+{ background-image: url("4 Star.png");
+  background-origin: content-box;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.Star_4_hover
+{ background-image: url("4 Star Hover.png");
+  background-origin: content-box;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.Star_5
+{ background-image: url("5 Star.png");
+  background-origin: content-box;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.Star_5_hover
+{ background-image: url("5 Star Hover.png");
+  background-origin: content-box;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.Rating_Lighting
+{ background-image: url("Rating Lighting Inactive.png") ;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.Rating_Lighting:hover
+{ background-image: url("Rating Lighting.png");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.Terms_and_Conditions
+{ font-family: 'IM Fell Double Pica';
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255,3,3,0.94);
+  -webkit-text-stroke-width: 0.6px;
+  -webkit-text-stroke-color: rgb(133,133,6);
+  margin-left: 25px;
+  text-shadow: 2px 3px 4px rgba(0,0,0,0.6);
+}
+
+.Terms_and_Conditions:hover
+{ font-size: 22px;
+  font-weight: 300;
+  color: rgb(253,101,0);
+  -webkit-text-stroke-width: 0.6px;
+  -webkit-text-stroke-color: rgb(1,16,203);
+  text-shadow: 2px 3px 4px rgba(0,0,0,0.6);
+  text-decoration: none;	
+}
+
+.Terms_Lighting
+{ background-image: url("Terms & Conditions Lighting.png");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.Terms_Lighting:hover
+{ background-image: url("Terms & Conditions Lighting Hover.png");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.Suggestion_Lighting
+{ background-image: url("Suggestion Lighting.png");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.Suggestion_Lighting:hover
+{ background-image: url("Suggestion Lighting Hover.png");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.Suggestion_Text
+{ font-family: "IM Fell Double Pica";
+  font-size: 23px;
+  font-weight: 250;
+  color: rgba(3,255,221,0.94);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(18,6,133);
+  text-shadow: 2px 3px 4px rgba(0,0,0,0.6);
+}
+
+.Suggestion_Text:hover
+{ font-size:23px;
+  font-weight: 250;
+  text-shadow: 2px 3px 4px rgba(0,0,0,0.6);
+  color: rgba(182,173,3,0.6);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(218,165,32);
+  cursor: pointer;
+}
